@@ -27,6 +27,7 @@ def fetch_cryptocurrency_data(api_key):
         print(f"Error: {response.status_code}")
         return None
 
+print()
 # display ---------------------------------------------------------------------------------------
 def display_cryptocurrency_info(crypto):
     name = crypto['name']
@@ -49,6 +50,7 @@ def display_cryptocurrency_info(crypto):
     if name == "Ethereum" and price > 2000:
         print(f"Alert: Ethereum value is above $2,000. Consider selling!")
         msg = 'Ethereum value is above $2,000. Consider selling!'
+        
         #send text message
         txtmsg = client.messages.create(to=myCellPhone,from_=TwilioNumber,body=msg)
 
